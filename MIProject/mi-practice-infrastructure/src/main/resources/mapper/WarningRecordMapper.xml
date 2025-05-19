@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xiaomi.practice.infrastructure.mapper.WarningRecordMapper">
+
+    <!--  批量保存解析的预警数据  -->
+    <insert id="batchSave" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO battery_warning_records
+            (car_id, warn_level, warn_name, battery_type)
+        VALUES
+        <foreach collection="list" item="item" separator=",">
+            (#{item.carId}, #{item.warnLevel}, #{item.warnName}, #{item.batteryType})
+        </foreach>
+    </insert>
+
+</mapper>

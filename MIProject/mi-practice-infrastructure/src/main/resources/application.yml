@@ -1,0 +1,18 @@
+spring:
+#  redis:
+#    host: 127.0.0.1
+#    port: 6379
+#    jedis:
+#      pool:
+#        max-active: 8
+#        max-idle: 8
+#        min-idle: 0
+  datasource:
+    url: jdbc:mysql://localhost:3306/MiPractice?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username: root
+    password: 8972457qQ
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+logging:
+  level:
+    org.example.mapper: DEBUG  # 替换为你的Mapper接口所在包路径
